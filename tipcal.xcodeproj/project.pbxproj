@@ -14,7 +14,7 @@
 		FA20939D21E91B1100FF91B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA20939B21E91B1100FF91B8 /* LaunchScreen.storyboard */; };
 		FA2093A821E91B1200FF91B8 /* tipcalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2093A721E91B1200FF91B8 /* tipcalTests.swift */; };
 		FA2093B321E91B1200FF91B8 /* tipcalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2093B221E91B1200FF91B8 /* tipcalUITests.swift */; };
-		FA2093C121E9306000FF91B8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2093C021E9306000FF91B8 /* SettingsViewController.swift */; };
+		FA2093C521E9999800FF91B8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2093C421E9999800FF91B8 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +48,7 @@
 		FA2093AE21E91B1200FF91B8 /* tipcalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tipcalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA2093B221E91B1200FF91B8 /* tipcalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tipcalUITests.swift; sourceTree = "<group>"; };
 		FA2093B421E91B1200FF91B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA2093C021E9306000FF91B8 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		FA2093C421E9999800FF91B8 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +102,7 @@
 				FA20939221E91B1100FF91B8 /* AppDelegate.swift */,
 				FA20939421E91B1100FF91B8 /* ViewController.swift */,
 				FA20939621E91B1100FF91B8 /* Main.storyboard */,
-				FA2093C021E9306000FF91B8 /* SettingsViewController.swift */,
+				FA2093C421E9999800FF91B8 /* SettingsViewController.swift */,
 				FA20939921E91B1100FF91B8 /* Assets.xcassets */,
 				FA20939B21E91B1100FF91B8 /* LaunchScreen.storyboard */,
 				FA20939E21E91B1100FF91B8 /* Info.plist */,
@@ -264,7 +264,7 @@
 			files = (
 				FA20939521E91B1100FF91B8 /* ViewController.swift in Sources */,
 				FA20939321E91B1100FF91B8 /* AppDelegate.swift in Sources */,
-				FA2093C121E9306000FF91B8 /* SettingsViewController.swift in Sources */,
+				FA2093C521E9999800FF91B8 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

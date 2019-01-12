@@ -10,12 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    
+    @IBOutlet var themeView: UIView!
     @IBOutlet weak var tipControl: UISegmentedControl!
     @IBOutlet weak var totalField: UITextField!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var tipLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        totalField.becomeFirstResponder()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -38,6 +41,26 @@ class ViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        let defaults = UserDefaults.standard
+        let tipValue=defaults.integer(forKey: "default_tip")
+        tipControl.selectedSegmentIndex=tipValue
+        let theme=defaults.bool(forKey: "default_theme")
+        if (theme==false){
+           
+                UIView.animate(withDuration:0.4, animations: {
+                    
+                    self.themeView.backgroundColor=UIColor.gray
+                })
+        }
+        else{
+            UIView.animate(withDuration:0.4, animations: {
+                
+                self.themeView.backgroundColor=UIColor.white
+            })
+        }
+
+        
+        
         print("view will appear")
         // This is a good place to retrieve the default tip percentage from UserDefaults
         // and use it to update the tip amount

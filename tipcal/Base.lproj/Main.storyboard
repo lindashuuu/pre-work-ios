@@ -87,22 +87,24 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="TipCalcultor" id="hhk-qJ-KVk">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="3wZ-GF-gxa">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="d0r-Qm-JMS">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="mAq-5N-4YJ">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6cb-n0-8Vp">
                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Settings"/>
                                 <connections>
-                                    <segue destination="hzK-wJ-ugO" kind="push" id="pkH-Kl-ddn"/>
+                                    <segue destination="UUx-zo-sct" kind="push" id="ayx-OY-VwO"/>
                                 </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="themeView" destination="8bC-Xf-vdC" id="sDD-dv-rAq"/>
                         <outlet property="tipControl" destination="POS-xZ-qFk" id="cea-oe-CeB"/>
                         <outlet property="tipLabel" destination="1YW-Dz-pxt" id="5Hd-cc-UfC"/>
                         <outlet property="totalField" destination="PaW-5w-R4C" id="Y7O-L9-Wrz"/>
                         <outlet property="totalLabel" destination="Wnp-Jk-YJ3" id="0hR-5V-OiR"/>
+                        <outlet property="view" destination="8bC-Xf-vdC" id="sL1-0f-r1h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -114,55 +116,60 @@
             </objects>
             <point key="canvasLocation" x="596.5" y="13.5"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="PFH-25-NyA">
+        <!--Settings View Controller-->
+        <scene sceneID="TeH-pe-RlH">
             <objects>
-                <viewController id="hzK-wJ-ugO" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Sen-Wn-7bt">
+                <viewController id="UUx-zo-sct" customClass="SettingsViewController" customModule="tipcal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cFQ-0S-rER">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="MkD-SV-Yjh">
-                                <rect key="frame" x="262" y="145" width="51" height="31"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="default tips" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HPo-HQ-QEV">
+                                <rect key="frame" x="44" y="147" width="86" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="tTk-rb-nBk">
+                                <rect key="frame" x="44" y="187" width="269" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="15%"/>
+                                    <segment title="20%"/>
+                                    <segment title="25%"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeDefault:" destination="UUx-zo-sct" eventType="valueChanged" id="fcX-j2-hNp"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Lights on" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DEm-09-IhM">
+                                <rect key="frame" x="52" y="287" width="71" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="y60-qa-YxR">
+                                <rect key="frame" x="264" y="287" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="changeTheme:" destination="UUx-zo-sct" eventType="valueChanged" id="pYw-hL-Y99"/>
+                                </connections>
                             </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="LDT-p1-Jm2">
-                                <rect key="frame" x="262" y="264" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Rounding" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gsm-TP-RS7">
-                                <rect key="frame" x="58" y="150" width="73" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Background Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XID-Zi-Lt2">
-                                <rect key="frame" x="58" y="269" width="138" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Perctanages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2x4-53-eti">
-                                <rect key="frame" x="58" y="386" width="96" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" id="HEl-ef-x2o">
-                                <rect key="frame" x="239" y="378" width="94" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </stepper>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="uX5-ZA-OgO"/>
+                    <navigationItem key="navigationItem" id="kR9-TR-xQq"/>
+                    <connections>
+                        <outlet property="defaultControl" destination="tTk-rb-nBk" id="unJ-Rr-xGR"/>
+                        <outlet property="themeSwitch" destination="y60-qa-YxR" id="UPX-QJ-ruV"/>
+                        <outlet property="themeView" destination="cFQ-0S-rER" id="zmD-E8-fy1"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="r6M-yy-xuP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="klD-eX-U5F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1019" y="5"/>
+            <point key="canvasLocation" x="1071.5" y="24.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2UF-is-TZ0">
